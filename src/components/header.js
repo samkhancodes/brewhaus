@@ -19,7 +19,7 @@ const Header = ({ filteredData }) => {
   return (
     <Navbar variant="dark" bg="dark" expand="lg" collapseOnSelect>
       <Container className="py-3 mobile">
-        // Logo and Title
+        {/* Logo and Title */}
         <LinkContainer to="/">
           <div className="d-flex align-items-center logo" href="#home">
             <div>
@@ -39,7 +39,7 @@ const Header = ({ filteredData }) => {
             </div>
           </div>
         </LinkContainer>
-        // Search Box
+        {/* Search Box */}
         <div>
           <SearchBar responseData={responseData} />
         </div>
