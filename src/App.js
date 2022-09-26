@@ -28,7 +28,7 @@ const App = () => {
     (response) => {
       if (response !== "") {
         const fData = productData.filter((resp) => {
-          return resp.name.includes(response);
+          return resp.name.toLowerCase().indexOf(response.toLowerCase()) !== -1;
         });
         console.log(fData);
         setFilterData(fData);
