@@ -8,10 +8,12 @@ const HomeScreen = ({ productLength, filteredData }) => {
   const [products, setProducts] = useState([]);
   const [active, setActive] = useState(1);
 
+  // Sets the active page number 
   const handleChangePage = useCallback((number) => {
     setActive(number);
   }, []);
 
+  // Fetching the products by limit for pagination
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get(

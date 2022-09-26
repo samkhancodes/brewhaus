@@ -4,7 +4,12 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import SearchBar from "./searchBar";
 
-const Header = ({ data, titles, filteredData }) => {
+const Header = ({ filteredData }) => {
+
+  /* 
+  This call back function is used to get response from Search Bar
+  and then pass it to App.js
+  */ 
   const responseData = useCallback(
     (response) => {
       filteredData(response);
@@ -14,6 +19,7 @@ const Header = ({ data, titles, filteredData }) => {
   return (
     <Navbar variant="dark" bg="dark" expand="lg" collapseOnSelect>
       <Container className="py-3 mobile">
+        // Logo and Title
         <LinkContainer to="/">
           <div className="d-flex align-items-center logo" href="#home">
             <div>
@@ -33,6 +39,7 @@ const Header = ({ data, titles, filteredData }) => {
             </div>
           </div>
         </LinkContainer>
+        // Search Box
         <div>
           <SearchBar responseData={responseData} />
         </div>

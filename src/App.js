@@ -12,6 +12,7 @@ const App = () => {
   const [productLength, setProductLength] = useState(0);
   const [filterData, setFilterData] = useState([]);
 
+  // Fetching all the data to filter
   const fetchAllProducts = async () => {
     const { data } = await axios.get(`https://api.punkapi.com/v2/beers`);
     setProductData(data);
@@ -22,6 +23,7 @@ const App = () => {
     setProductLength(productData.length);
   }, [productData.length, filterData]);
 
+  // Filtering the data as the user types in search box
   const filteredData = useCallback(
     (response) => {
       if (response !== "") {

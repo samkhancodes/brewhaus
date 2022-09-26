@@ -7,6 +7,7 @@ const ProductScreen = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
+  // To call API to fetch all the data
   useEffect(() => {
     const fetchProduct = async () => {
       const { data } = await axios.get(
@@ -23,7 +24,7 @@ const ProductScreen = () => {
       </Link>
 
       <Row>
-        <Col md={4}>
+        <Col md={4} className="text-center prod-image">
           <Image src={product.image_url} alt={product.name} fluid />
         </Col>
         <Col md={8}>

@@ -11,6 +11,10 @@ main {
   width: 50px;
 }
 
+.prod-image img {
+  height: 700px;
+}
+
 @media screen and (max-width: 767px) {
   .logo {
     margin-bottom: 15px;
@@ -18,5 +22,10 @@ main {
 
   .mobile {
     justify-content: center !important;
+  }
+
+  .prod-image img {
+    height: 500px;
+    margin-bottom: 20px;
   }
 }
