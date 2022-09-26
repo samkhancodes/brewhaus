@@ -3,7 +3,7 @@ import Pagination from "react-bootstrap/Pagination";
 
 const MyPagination = ({ total, current, handleChangePage }) => {
   let items = [];
-    let number = 1
+  let number = 1;
   if (current > 1) {
     items.push(
       <Pagination.Prev
@@ -22,7 +22,6 @@ const MyPagination = ({ total, current, handleChangePage }) => {
         active={number === current}
         data-page={number}
         onClick={(e) => {
-        console.log(e)
           handleChangePage(parseInt(e.target.innerText));
         }}
       >
@@ -30,10 +29,9 @@ const MyPagination = ({ total, current, handleChangePage }) => {
       </Pagination.Item>
     );
   }
-  console.log(items, "Items ")
   if (current < total) {
     items.push(
-      <Pagination.Next 
+      <Pagination.Next
         key="next"
         onClick={() => {
           handleChangePage(current + 1);

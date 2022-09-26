@@ -1,0 +1,18 @@
+img.card-img-top {
+  max-height: 330px;
+  width: 100%;
+  height: auto;
+}
+
+ul.pagination {
+  margin-top: 71px;
+  justify-content: center;
+}
+
+.card-body {
+  padding-top: 15px;
+}
+
+.h-90 {
+  height: 90% !important;
+}

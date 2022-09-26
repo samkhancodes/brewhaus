@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
-import Rating from "../components/rating";
+import { Row, Col, Image, ListGroup, Card } from "react-bootstrap";
 import axios from "axios";
 
 const ProductScreen = () => {
@@ -13,7 +12,6 @@ const ProductScreen = () => {
       const { data } = await axios.get(
         `https://api.punkapi.com/v2/beers/${id}`
       );
-      console.log(data);
       setProduct(data[0]);
     };
     fetchProduct();
@@ -36,11 +34,16 @@ const ProductScreen = () => {
             <ListGroup.Item>
               <b>Release Date:</b> {product.first_brewed}
             </ListGroup.Item>
-            <ListGroup.Item><b>Description:</b> {product.description}</ListGroup.Item>
-            <ListGroup.Item><b>Brewer Tips:</b> {product.brewers_tips}</ListGroup.Item>
+            <ListGroup.Item>
+              <b>Description:</b> {product.description}
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <b>Brewer Tips:</b> {product.brewers_tips}
+            </ListGroup.Item>
 
-            <ListGroup.Item><b>Contributed by:</b> {product.contributed_by}</ListGroup.Item>
-
+            <ListGroup.Item>
+              <b>Contributed by:</b> {product.contributed_by}
+            </ListGroup.Item>
           </ListGroup>
 
           <Card className="mt-5">
@@ -54,9 +57,9 @@ const ProductScreen = () => {
                   {product &&
                     product.ingredients &&
                     product.ingredients.malt &&
-                    product.ingredients.malt.map((item) => {
+                    product.ingredients.malt.map((item, i) => {
                       return (
-                        <ListGroup.Item>
+                        <ListGroup.Item key={i}>
                           <Row>
                             <Col>
                               <b>{item.name}</b>
@@ -77,9 +80,9 @@ const ProductScreen = () => {
                   {product &&
                     product.ingredients &&
                     product.ingredients.hops &&
-                    product.ingredients.hops.map((item) => {
+                    product.ingredients.hops.map((item, i) => {
                       return (
-                        <ListGroup.Item>
+                        <ListGroup.Item key={i}>
                           <Row>
                             <Col>
                               <b>{item.name}</b>
